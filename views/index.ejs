@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="js/index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Logistics Planner</h1>
+    </header>
+    <div class="main">
+        <div class="customer_requests">
+            <ul>
+                <p>List of Pending Deliveries</p>
+                <% results.forEach(function(result, key) { %>
+                  <li class="requests" id="request-<%= key %>" ondragstart="dragstart(event)" draggable="true">
+                    <p><strong><%= result.name %></strong></p>
+                    from <%= result.pickup_location %>
+                    to <%= result.delivery_location %>
+                  </li>
+                <% }); %>
+              </ul>
+        </div>
+        <div class='planner_schedule'>
+            <% days.forEach((day, key) => { %>
+                <ul class="drop" id="day-<%= day %>" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)">
+                    <p>Delivery for date: <%= date.getDate() + key %> - <%= date.getMonth() + 1 %> - <%= date.getFullYear() %></p>
+                </ul>
+            <% }) %>
+                        
+        </div>
+    </div>
+</body>
+</html>

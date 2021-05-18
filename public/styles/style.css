@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: #34f;
+    text-align: center;
+    border-bottom: 5px solid #116;
+    padding: 20px;
+}
+
+header > h1 {
+    color: white;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 5%;
+}
+
+.main > div {
+    width: 50%;
+}
+
+ul {
+    list-style: none;
+    padding: 10px;
+    margin: 10px;
+}
+
+.drop {
+    min-height: 20px;
+    background-color: yellow;
+}
+
+.requests {
+    background-color: #ccf;
+    padding: 10px;
+    border-radius: 15px;
+    color: #116;
+    margin: 5px;
+    font-size: 1.2rem;
+}
+
+.requests p {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
