@@ -1,6 +1,8 @@
 import express from 'express'
 import db from './db'
 
+require('dotenv').config()
+
 const app = express()
 
 app.use(express.static(__dirname + '/public'));
@@ -16,6 +18,6 @@ app.get('/', async (req, res) => {
     res.render('index', { results, date, days })
 })
 
-app.listen(2000, () => {
-    console.log('listening on port 2000...')
+app.listen(process.env.PORT, () => {
+    console.log(`listening on port ${process.env.PORT}...`)
 })
